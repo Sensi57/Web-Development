@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToDo List</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToDo List</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/1/1560.png" size="10x10"></div>
+        <div id="main">
+            <div id="title"><h1>ToDo List</h1></div>
+            <div id="userInp">
+                <input id="input" type="text" placeholder="Write Task">
+                <button type="submit" onclick="add()">Add</button>
+            </div>
+            <div id="list"></div>
+        </div>
+        <script>
+            const destination = document.getElementById("list");
+                const input = document.getElementById("input");
+                function add(){
+                    let text = input.value;
+                    if (text == ""){
+                        return;
+                    }
+                    input.value = "";
+                    destination.innerHTML += `<div class="listItem"><input class="cbox" type="checkbox" onclick="cross(this)"><p>${text}<p>
+                     <div class = "pic"><img class="del" onclick="del(this);" src="https://cdn-icons-png.flaticon.com/512/51/51517.png" width="20px"><div><\div>`;
+                }
+                function del(element){
+                    return element.parentNode.parentNode.remove();
+                }
+                function cross(element){
+                    let crossed = element.parentNode.childNodes[1];
+                    return (element.checked) ? crossed.style.textDecoration = "line-through" : crossed.style.textDecoration = "none";
+                }
+        </script>
+    </body>
+</html>
