@@ -1,0 +1,14 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a href="{{product.url}}" target="_blank" [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+  <img *ngIf="product.image" src="{{product.image}}">
+  <p *ngIf="product.price"> Price: {{product.price}} ₸.</p>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <p *ngIf="product.rating">Rating: {{ product.rating }} out of 5</p>
+  <button type="button" (click)="share(product.url)">Share</button>
+</div>
