@@ -1,0 +1,30 @@
+<div class="product_container">
+  <div class="product_wrapper">
+    <div class="product_images">
+      <img class="product_images_current" src="{{product.currectImg}}">
+      <div class="product_images_galery">
+        <img class="product_images_galery_img" *ngFor="let image of product.galery" src="{{image}}"
+             (click)="changeCurrentImg(image)">
+      </div>
+    </div>
+    <div class="product_info">
+      <p class="product_info_name">
+        {{product.name}}
+      </p>
+      <p class="product_info_description">
+        {{product.description}}
+      </p>
+      <p class="product_info_raiting">
+        {{product.raiting}}
+      </p>
+      <div class="product_info_like_section">
+        <p class="product_info_raiting">
+          Likes : {{product.likes}}
+        </p>
+      </div>
+      <button class="product_info_share" (click)="shareWithTelegram()">
+        Share with telegram
+      </button>
+    </div>
+  </div>
+</div>

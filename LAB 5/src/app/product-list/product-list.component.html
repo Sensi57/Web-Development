@@ -1,0 +1,23 @@
+<div class="products">
+  <p class="products_title">
+    Products
+  </p>
+  <div class="products_container">
+    <div class="products_item" *ngFor="let item of products;let i = index">
+      <img class="products_item_remove" src="assets/close.png" (click)="removeProduct(i)">
+      <p class="products_item_name" (click)="goToRealPage(i)">
+        {{item.name}}
+      </p>
+      <img class="products_item_image" (click)="goToRealPage(i)" src="{{item.currectImg}}">
+      <p class="products_item_description">
+        {{item.description}}
+      </p>
+      <p class="products_item_raiting">
+        {{item.raiting}}
+      </p>
+      <p class="products_item_raiting">
+        Likes : {{item.likes}}
+      </p>
+    </div>
+  </div>
+</div>
