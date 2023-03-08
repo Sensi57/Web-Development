@@ -1,0 +1,23 @@
+<img class="backimg" src="https://icons.veryicon.com/png/o/miscellaneous/arrows/go-back-2.png" (click)="goBack()">
+
+<div class="container">
+  <div class="container_title_box" *ngIf="isEdit===false">
+    <a></a>
+    <p class="container_title" (click)="goToPhotos(album.id)">
+      Title: {{album.title}}
+    </p>
+    <button class="container_but" (click)="edit()">
+      Edit
+    </button>
+
+  </div>
+  <div class="container_change" *ngIf="isEdit===true">
+    <input class="container_inp" [(ngModel)]="editableText" type="text">
+    <button class="container_but2" (click)="save()">
+      Save
+    </button>
+  </div>
+  <img
+    src="https://vsegda-pomnim.com/uploads/posts/2022-04/1650916240_29-vsegda-pomnim-com-p-krasivie-peizazhi-gor-foto-39.jpg">
+</div>
+

@@ -1,0 +1,13 @@
+<div class="container">
+  <p class="container_name">
+    Albums
+  </p>
+  <div class="container_box">
+    <div class="container_box_item" *ngFor="let i of albums">
+      <p class="container_box_item_name">{{i.title}}</p>
+      <button class="container_box_item_but" (click)="goToPageById(i.id)">
+        Перейти
+      </button>
+    </div>
+  </div>
+</div>

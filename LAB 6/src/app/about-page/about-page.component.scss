@@ -1,0 +1,31 @@
+.name_wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 24px;
+
+}
+.about{
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+  width: 1000px;
+  padding: 50px 0px 0px 250px;
+  &_img{
+    width: 600px;
+    height: 400px;
+  }
+  &_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &_text{
+      font-size: 18px;
+      font-family: sans-serif;
+      font-weight: 700;
+      color: #2e3d49;
+
+    }
+  }
+}
