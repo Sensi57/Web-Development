@@ -1,0 +1,15 @@
+def array123(nums):
+  a1 = False
+  a2 = False
+  a3 = False
+  for i in nums:
+    if i == 1:
+      a1 = True
+    elif i == 2:
+      a2 = True
+    elif i == 3:
+      a3 = True
+  if (a1 and a2 and a3) == True:
+    return True
+  else:
+    return False

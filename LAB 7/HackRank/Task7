@@ -1,0 +1,31 @@
+def partition(my_list, low, high):
+    pivot = my_list[high]
+    i = low - 1
+    for j in range(low, high):
+        if my_list[j] <= pivot:
+            i = i + 1
+            (my_list[i], my_list[j]) = (my_list[j], my_list[i])
+    (my_list[i + 1], my_list[high]) = (my_list[high], my_list[i + 1])
+    return i + 1
+ 
+ 
+def quick_sort(my_list, low, high):
+    if low < high:
+        pi = partition(my_list, low, high)
+        quick_sort(my_list, low, pi - 1)
+        quick_sort(my_list, pi + 1, high)
+
+def answer(my_list):
+    for i in range(len(my_list)):
+        cnt =  0
+        for j in range(len(my_list)-i):
+            if my_list[i] == my_list[j]:
+                cnt+=1
+        if cnt == 0:
+            return my_list[i]
+        
+a = int(input())
+my_list = list(map(int, input().split(" ")))
+quick_sort(my_list, 0, len(my_list) - 1)
+
+print(answer(my_list))

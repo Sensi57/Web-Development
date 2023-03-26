@@ -1,0 +1,12 @@
+a = int(input())
+b = input().split()
+my_dict = {}
+
+for i in b:
+    my_dict[i] = my_dict.get(i, 0) + 1
+
+for i, j in my_dict.items():
+    if j != a:
+        print(i)
+        
+        

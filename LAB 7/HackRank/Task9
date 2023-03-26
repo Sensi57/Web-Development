@@ -1,0 +1,42 @@
+# a = input().split()
+# b = int(input())
+# my_list = list(range(0,b))
+# for i in range(b):
+#     s = input().split(" ")
+#     cnt = 0
+#     for m in s:
+#         for n in a:
+#             if n == m:
+#                 cnt+=1
+#     print(cnt, end=" ")
+
+#     if cnt != len(a) and cnt == len(s):
+#         my_list[i] = True
+#     else:
+#         my_list[i] = False
+        
+# for i in my_list:
+#     print(i, end=" ")
+
+# def is_True(my_list):
+#     for i in my_list:
+#         if i == False:
+#             return "False"
+#     return "True"
+            
+# print(is_True(my_list))
+
+a = input().split()
+b = int(input())
+
+def my_fun(a, b):
+    a = set(a)
+    for i in range(b):
+        s = input().split()
+        s = set(s)
+        if not s.issubset(a):
+            return "False"
+    return "True"
+
+print(my_fun(a, b))
+        
